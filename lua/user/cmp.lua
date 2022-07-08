@@ -1,20 +1,16 @@
 local cmp_status_ok, cmp = pcall(require, "cmp")
-if not cmp_status_ok then
-	return
-end
+if not cmp_status_ok then return end
 
 local snip_status_ok, luasnip = pcall(require, "luasnip")
-if not snip_status_ok then
-	return
-end
+if not snip_status_ok then return end
 
 luasnip.filetype_extend("javascript", { "javascriptreact" })
 
 require("luasnip/loaders/from_vscode").lazy_load()
 
 local check_backspace = function()
-	local col = vim.fn.col(".") - 1
-	return col == 0 or vim.fn.getline("."):sub(col, col):match("%s")
+  local col = vim.fn.col(".") - 1
+  return col == 0 or vim.fn.getline("."):sub(col, col):match("%s")
 end
 
 local kind_icons = {
@@ -90,9 +86,9 @@ cmp.setup {
     format = function(entry, vim_item)
       vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
       vim_item.menu = ({
-        luasnip = "[Luasnip]",
         nvim_lsp = "[LSP]",
         nvim_lua = "[NVIM_LUA]",
+        luasnip = "[Luasnip]",
         buffer = "[Buffer]",
         path = "[Path]",
         emoji = "[Emoji]"
@@ -102,7 +98,7 @@ cmp.setup {
   },
 
   sources = {
-    { name = "luasnip" }, { name = "nvim_lua" }, { name = "nvim_lsp" },
+    { name = "nvim_lsp" }, { name = "nvim_lua" }, { name = "luasnip" },
     { name = "buffer" }, { name = "path" }
   },
   confirm_opts = { behavior = cmp.ConfirmBehavior.Replace, select = false },

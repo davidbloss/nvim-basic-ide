@@ -2,7 +2,7 @@ local status_ok, lsp_installer = pcall(require, "nvim-lsp-installer")
 if not status_ok then return end
 
 local servers = {
-  "jsonls", "emmet_ls", "sumneko_lua", "tsserver", "jedi_language_server"
+  "yamlls", "jsonls", "emmet_ls", "sumneko_lua", "tsserver", "jedi_language_server"
 }
 
 lsp_installer.setup()
