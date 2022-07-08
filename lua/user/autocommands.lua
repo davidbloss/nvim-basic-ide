@@ -1,3 +1,14 @@
+-- Autocommand that reloads neovim whenever you save the plugins.lua file
+
+-- Auto format on save
+vim.cmd [[
+  augroup format_on_save
+    autocmd!
+    autocmd BufWritePost *.py,*.lua lua vim.lsp.buf.formatting_sync(nil, 1000)
+    autocmd BufWritePost *.js,*.ts lua vim.lsp.buf.formatting()
+  augroup end
+]]
+
 -- Use 'q' to quit from common plugins
 vim.api.nvim_create_autocmd({ "FileType" }, {
   pattern = { "qf", "help", "man", "lspinfo", "spectre_panel", "lir" },
