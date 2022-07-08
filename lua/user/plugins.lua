@@ -149,6 +149,7 @@ return packer.startup(function(use)
     "RRethy/vim-illuminate",
     commit = "c82e6d04f27a41d7fdcad9be0bce5bb59fcb78e5"
   }
+  use { "tamago324/nlsp-settings.nvim" }
 
   -- Telescope
   use {
