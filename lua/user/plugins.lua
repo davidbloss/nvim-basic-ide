@@ -67,6 +67,7 @@ return packer.startup(function(use)
     "akinsho/bufferline.nvim",
     commit = "c78b3ecf9539a719828bca82fc7ddb9b3ba0c353"
   }
+  use { "mbbill/undotree" }
   use { "moll/vim-bbye", commit = "25ef93ac5a87526111f43e5110675032dbcacf56" }
   use {
     "nvim-lualine/lualine.nvim",
@@ -129,7 +130,9 @@ return packer.startup(function(use)
 
   -- snippets
   use { "L3MON4D3/LuaSnip", commit = "79b2019c68a2ff5ae4d732d50746c901dd45603a" } -- snippet engine
-  use { "rafamadriz/friendly-snippets", commit = "24afb4c178d8ea28bfa73f37814ada43be478b1d" } -- a bunch of snippets to use
+  use {
+    "rafamadriz/friendly-snippets",
+  } -- a bunch of snippets to use
   use "andrejlevkovitch/vim-lua-format" -- lua formatter
 
   -- LSP
@@ -168,6 +171,8 @@ return packer.startup(function(use)
     "lewis6991/gitsigns.nvim",
     commit = "c18e016864c92ecf9775abea1baaa161c28082c3"
   }
+  use { "tpope/vim-fugitive" }
+  use { "mattn/emmet-vim" }
 
   -- DAP
   use {

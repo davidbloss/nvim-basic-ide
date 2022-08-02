@@ -15,9 +15,17 @@ vim.g.mapleader = " "
 --   term_mode = "t",
 --   command_mode = "c",
 
+keymap("n", "<F1>", "<ESC>", opts)
 keymap("n", "Y", "yy", opts)
 keymap("n", "-", "ddp", opts)
 keymap("n", "_", "ddkP", opts)
+
+keymap("n", "<leader>\"", "viw<ESC>a\"<ESC>bi\"<ESC>lel", opts)
+keymap("n", "<leader>'", "viw<ESC>a'<ESC>bi'<ESC>lel", opts)
+keymap("n", "<leader>[", "viw<ESC>a]<ESC>bi[<ESC>lel", opts)
+keymap("n", "<leader>(", "viw<ESC>a)<ESC>bi(<ESC>lel", opts)
+keymap("n", "<leader>{", "viw<ESC>a}<ESC>bi{<ESC>lel", opts)
+keymap("n", "<leader><", "viw<ESC>a><ESC>bi<<ESC>lel", opts)
 
 -- Normal --
 -- Better window navigation
