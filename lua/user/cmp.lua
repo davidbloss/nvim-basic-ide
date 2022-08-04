@@ -41,6 +41,9 @@ local kind_icons = {
   TypeParameter = ""
 }
 
+cmp.setup.cmdline(":", { sources = { { name = 'cmdline' } } })
+cmp.setup.cmdline("/", { sources = { { name = 'buffer' } } })
+
 cmp.setup {
   snippet = {
     expand = function(args)
