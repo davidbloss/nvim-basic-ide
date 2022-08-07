@@ -1,10 +1,18 @@
+-- Auto format on save
+vim.cmd [[
+  augroup format_on_save
+    autocmd!
+    autocmd BufWritePre * :%s/\s\+$//e
+  augroup end
+]]
+
 -- Use 'q' to quit from common plugins
 vim.api.nvim_create_autocmd({ "FileType" }, {
   pattern = { "qf", "help", "man", "lspinfo", "spectre_panel", "lir" },
   callback = function()
     vim.cmd [[
-      nnoremap <silent> <buffer> q :close<CR> 
-      set nobuflisted 
+      nnoremap <silent> <buffer> q :close<CR>
+      set nobuflisted
     ]]
   end,
 })
@@ -33,9 +41,7 @@ vim.cmd "autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTre
 
 -- Fixes Autocomment
 vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
-  callback = function()
-    vim.cmd "set formatoptions-=cro"
-  end,
+  callback = function() vim.cmd "set formatoptions-=cro" end
 })
 
 -- Highlight Yanked Text
