@@ -16,8 +16,13 @@ require "user.toggleterm"
 require "user.project"
 require "user.impatient"
 require "user.illuminate"
-require "user.indentline"
-require "user.alpha"
+-- require "user.indentline"
+-- require "user.alpha"
 require "user.whichkey"
-require "user.lsp"
+require "user.mason" -- Before LSP
+require "user.lsp" -- After Mason
 require "user.dap"
+
+
+--[[ require("orgmode").setup_ts_grammar() ]]
+require("go").setup()

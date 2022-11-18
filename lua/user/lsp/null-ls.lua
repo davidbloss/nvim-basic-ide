@@ -20,10 +20,13 @@ null_ls.setup {
       extra_args = {
         "--indent-width=2", "--no-use-tab", "--spaces-inside-table-braces"
       }
-    }, diagnostics.pylint,
+    },
+    -- diagnostics.gofmt,
+    diagnostics.pylint,
     -- diagnostics.eslint,
     -- code_actions.eslint,
     diagnostics.eslint_d,
+    diagnostics.golangci_lint,
     code_actions.eslint_d,
   }
 }

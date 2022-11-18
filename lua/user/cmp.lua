@@ -100,7 +100,9 @@ cmp.setup {
         luasnip = "[Luasnip]",
         buffer = "[Buffer]",
         path = "[Path]",
-        emoji = "[Emoji]"
+        orgmode = "[Orgmode]"
+        -- nvim_lsp_signature_help = "[Sig_Help]"
+        -- emoji = "[Emoji]"
       })[entry.source.name]
       return vim_item
     end
@@ -108,7 +110,8 @@ cmp.setup {
 
   sources = {
     { name = "nvim_lsp" }, { name = "nvim_lua" }, { name = "luasnip" },
-    { name = "buffer" }, { name = "path" }, { name = 'nvim_lsp_signature_help' }
+    { name = "buffer" }, { name = "path" },
+    { name = 'nvim_lsp_signature_help' }, { name = "orgmode" }
   },
   confirm_opts = { behavior = cmp.ConfirmBehavior.Replace, select = false },
   window = {

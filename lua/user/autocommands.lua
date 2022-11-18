@@ -5,7 +5,7 @@ vim.cmd [[
   augroup format_on_save
     autocmd!
     autocmd BufWritePre * :%s/\s\+$//e
-    autocmd BufWritePost *.py,*.lua lua vim.lsp.buf.formatting_sync(nil, 1000)
+    autocmd BufWritePost *.py,*.lua lua vim.lsp.buf.format(nil, 1000)
     autocmd BufWritePost *.js,*.ts lua vim.lsp.buf.formatting()
   augroup end
 ]]
@@ -15,8 +15,8 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
   pattern = { "qf", "help", "man", "lspinfo", "spectre_panel", "lir" },
   callback = function()
     vim.cmd [[
-      nnoremap <silent> <buffer> q :close<CR> 
-      set nobuflisted 
+      nnoremap <silent> <buffer> q :close<CR>
+      set nobuflisted
     ]]
   end,
 })
