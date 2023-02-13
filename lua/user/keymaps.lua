@@ -20,6 +20,7 @@ keymap("n", "Y", "yy", opts)
 keymap("n", "-", "ddp", opts)
 keymap("n", "_", "ddkP", opts)
 
+keymap("n", "<leader>T", "<cmd>16split <bar> botright terminal<CR>", opts)
 -- keymap("n", "<leader>p", "\"_dp", opts)
 
 keymap("n", "<leader>\"", "viw<ESC>a\"<ESC>bi\"<ESC>lel", opts)
@@ -76,7 +77,7 @@ keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 -- keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts) -- <leader>b from whichkey
 
 -- Git
-keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
+keymap("n", "<leader>G", "<cmd>topleft Git<CR>", opts)
 
 -- Comment
 keymap("n", "<leader>/",

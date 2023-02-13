@@ -6,6 +6,7 @@ local servers = {
   "gopls",
   "yamlls",
   "jsonls",
+  "ruff_lsp",
   "emmet_ls",
   "sumneko_lua",
   "tsserver",
@@ -33,6 +34,11 @@ for _, server in pairs(servers) do
   if server == "jsonls" then
     local jsonls = require "user.lsp.settings.jsonls"
     opts = vim.tbl_deep_extend("force", jsonls, opts)
+  end
+
+  if server == "yamlls" then
+    local yamlls = require "user.lsp.settings.yamlls"
+    opts = vim.tbl_deep_extend("force", yamlls, opts)
   end
 
   -- if server == "jedi_language_server" then

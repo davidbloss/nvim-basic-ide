@@ -6,7 +6,7 @@ vim.cmd [[
     autocmd!
     autocmd BufWritePre * :%s/\s\+$//e
     autocmd BufWritePost *.py,*.lua lua vim.lsp.buf.format(nil, 1000)
-    autocmd BufWritePost *.js,*.ts lua vim.lsp.buf.formatting()
+    autocmd BufWritePost *.js,*.ts lua vim.lsp.buf.format(async=true)
   augroup end
 ]]
 

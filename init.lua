@@ -26,3 +26,6 @@ require "user.dap"
 
 --[[ require("orgmode").setup_ts_grammar() ]]
 require("go").setup()
+require("glow").setup({
+  width = 100,
+})
