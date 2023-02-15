@@ -95,6 +95,26 @@ local schemas = {
     description = "Resume json",
     fileMatch = { "resume.json" },
     url = "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json"
+  }, {
+    description = "dbt manifest",
+    fileMatch = { "manifest.json" },
+    url = "https://schemas.getdbt.com/dbt/manifest/v8.json"
+  }, {
+    description = "dbt sources",
+    fileMatch = { "sources.json" },
+    url = "https://schemas.getdbt.com/dbt/sources/v3.json"
+  }, {
+    description = "dbt catalog",
+    fileMatch = { "catalog.json" },
+    url = "https://schemas.getdbt.com/dbt/catalog/v3.json"
+  }, {
+    description = "dbt catalog",
+    fileMatch = { "catalog.json" },
+    url = "https://schemas.getdbt.com/dbt/catalog/v1.json"
+  }, {
+    description = "dbt run-results",
+    fileMatch = { "run-results.json" },
+    url = "https://schemas.getdbt.com/dbt/run-results/v4.json"
   }
 }
 
