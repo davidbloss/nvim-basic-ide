@@ -22,9 +22,9 @@ null_ls.setup {
     --[[   } ]]
     --[[ }, ]]
     diagnostics.shellcheck,
-    -- diagnostics.eslint,
+    diagnostics.eslint,
     -- code_actions.eslint,
-    diagnostics.eslint_d,
+    --[[ diagnostics.eslint_d, ]]
     diagnostics.golangci_lint,
     code_actions.eslint_d,
     code_actions.shellcheck,

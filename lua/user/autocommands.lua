@@ -6,7 +6,7 @@ vim.cmd [[
     autocmd!
     autocmd BufWritePre * :%s/\s\+$//e
     autocmd BufWritePost *.py,*.lua lua vim.lsp.buf.format(nil, 1000)
-    autocmd BufWritePost *.js,*.ts lua vim.lsp.buf.format(async=true)
+    autocmd BufWritePost *.js,*.ts lua vim.lsp.buf.format({async=true})
   augroup end
 ]]
 
@@ -20,6 +20,16 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
     ]]
   end,
 })
+
+-- Remove statusline and tabline when in Alpha
+-- vim.api.nvim_create_autocmd({ "BufEnter" }, {
+--   pattern = { "python" },
+--   callback = function()
+--     vim.cmd [[
+--       let g:python3_host_prog='/Users/davidbloss/.asdf/shims/python'
+--     ]]
+--   end,
+-- })
 
 -- Remove statusline and tabline when in Alpha
 vim.api.nvim_create_autocmd({ "User" }, {

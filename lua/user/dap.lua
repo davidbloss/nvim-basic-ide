@@ -3,16 +3,30 @@ if not dap_status_ok then
   return
 end
 
---[[ dap.adapters.go =  ]]
+-- TODO: config this
+--[[ dap.adapters.go = {} ]]
+--[[ dap.configurations.go = { ]]
+--[[   { ]]
+--[[     type = 'go'; ]]
+--[[     name = 'Debug'; ]]
+--[[     request = 'launch'; ]]
+--[[     showLog = false; ]]
+--[[     program = "${file}"; ]]
+--[[     dlvToolPath = vim.fn.exepath('dlv')  -- Adjust to where delve is installed ]]
+--[[   }, ]]
+--[[ } ]]
 
 local dap_ui_status_ok, dapui = pcall(require, "dapui")
 if not dap_ui_status_ok then
   return
 end
 
---dap_install.setup {}
+local dap_vt_status_ok, dap_virt_txt = pcall(require, "nvim-dap-virtual-text")
+if not dap_vt_status_ok then
+  return
+end
+dap_virt_txt.setup()
 
---dap_install.config("python", {})
 -- add other configs here
 local debugpy_path = vim.fn.stdpath "data" .. "/mason/bin"
 
@@ -28,17 +42,17 @@ dap.configurations.python = {
     name = "Launch",
     program = function()
       return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
-      end,
+    end,
     pythonPath = function()
       local venv_path = os.getenv("VIRTUAL_ENV")
       if venv_path then
-            return venv_path .. "/bin/python"
-        end
+        return venv_path .. "/bin/python"
+      end
       if vim.fn.executable(debugpy_path) == 1 then
-            return debugpy_path
-        else
-          return "python"
-        end
+        return debugpy_path
+      else
+        return "python"
+      end
     end,
   }
 }

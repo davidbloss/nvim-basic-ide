@@ -3,9 +3,12 @@
 
 local servers = {
   "bashls",
+  --[[ "eslint_d", ]]
+  "eslint",
   "gopls",
   "yamlls",
   "jsonls",
+  --[[ "pyright", ]]
   "ruff_lsp",
   "emmet_ls",
   "sumneko_lua",
@@ -46,10 +49,10 @@ for _, server in pairs(servers) do
   --   opts = vim.tbl_deep_extend("force", jedi_opts, opts)
   -- end
 
-  -- if server == "pyright" then
-  --   local pyright_opts = require "user.lsp.settings.pyright"
-  --   opts = vim.tbl_deep_extend("force", pyright_opts, opts)
-  -- end
+  if server == "pyright" then
+    local pyright_opts = require "user.lsp.settings.pyright"
+    opts = vim.tbl_deep_extend("force", pyright_opts, opts)
+  end
 
   if server == "emmet_ls" then
     local emmet_ls_opts = require "user.lsp.settings.emmet_ls"
